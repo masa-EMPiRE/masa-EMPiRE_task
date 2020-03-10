@@ -1,17 +1,12 @@
 <%= form_with(model: task, local: true) do |form| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
+  <% if @task.errors.any? %>
+    <p><b>【エラー内容】</b></p>
       <ul>
-        <% task.errors.full_messages.each do |message| %>
+        <% @task.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
-    </div>
   <% end %>
-  
-  <h1>タスク登録</h1>
   
   <div class="field">
     <%= form.label :タイトル%>
