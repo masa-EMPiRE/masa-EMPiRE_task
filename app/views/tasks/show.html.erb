@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>タイトル:</strong>
+  <strong>【タイトル】</strong>
   <%= @task.title %>
 </p>
 
 <p>
-  <strong>内容:</strong>
+  <strong>【内容】</strong>
   <%= @task.body %>
 </p>
 
-<%= link_to '編集', edit_task_path(@task) %> |
+<%= link_to '編集', edit_task_path(@task) %> 
+<%= link_to '削除', task_path(@task), method: :delete %>
 <%= link_to '戻る', tasks_path %>
