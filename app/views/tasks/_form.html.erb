@@ -1,11 +1,13 @@
 <%= form_with(model: task, local: true) do |form| %>
   <% if @task.errors.any? %>
-    <p><b>【エラー内容】</b></p>
-      <ul>
-        <% @task.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div id="error_explanation">
+      <p><b>【エラー内容】</b></p>
+        <ul>
+          <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    </div>
   <% end %>
   
   <div class="field">
